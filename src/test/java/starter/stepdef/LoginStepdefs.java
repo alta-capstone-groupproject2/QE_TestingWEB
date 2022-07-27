@@ -11,11 +11,6 @@ public class LoginStepdefs {
 
     @When("User click {string}")
     public void adminClick(String obj) {
-        switch (obj.toLowerCase()){
-            case "ok" :
-                loginStep.clickAlertOK();
-                break;
-            default:
-        }
+        loginStep.clickAlertOK(obj);
     }
 }

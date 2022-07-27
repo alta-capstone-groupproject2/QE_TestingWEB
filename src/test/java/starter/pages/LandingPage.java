@@ -25,4 +25,10 @@ public class LandingPage extends PageObject {
     public void clickLinkCultures(){
         linkCultures.click();
     }
+
+    @FindBy(id = "link-to-Event")
+    WebElement linkEvent;
+    public void clickLinkEvent(){
+        linkEvent.click();
+    }
 }

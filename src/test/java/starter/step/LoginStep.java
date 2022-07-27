@@ -29,8 +29,8 @@ public class LoginStep {
     }
 
     @Step
-    public void clickAlertOK(){
-        loginPage.clickAlertOK();
+    public void clickAlertOK(String accept){
+        loginPage.clickAlertOK(accept);
     }
 
     @Step

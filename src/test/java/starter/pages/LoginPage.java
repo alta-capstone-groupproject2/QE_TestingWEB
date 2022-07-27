@@ -2,6 +2,7 @@ package starter.pages;
 
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -14,10 +15,9 @@ public class LoginPage extends PageObject {
         return headerLogin.isDisplayed();
     }
 
-    @FindBy(xpath = "//button[contains(text(),\"OK\")]")
-    WebElement alertOk;
-    public void clickAlertOK(){
-        alertOk.click();
+    public void clickAlertOK(String accept){
+        WebElement element = getDriver().findElement(By.xpath("//*[contains(text(),\""+accept+"\")]"));
+        element.click();
     }
 
     @FindBy(xpath = "//body/div[@id='root']/div[1]/nav[1]/div[1]")

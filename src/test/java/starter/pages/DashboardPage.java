@@ -10,4 +10,10 @@ public class DashboardPage extends PageObject {
     public Boolean profilHeaderIsDisplayed(){
         return profileHead.isDisplayed();
     }
+
+    @FindBy(xpath = "//p[contains(text(),\"My Event\")]")
+    WebElement myEventMenu;
+    public void clickMyEvent(){
+        myEventMenu.click();
+    }
 }

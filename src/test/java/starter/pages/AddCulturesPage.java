@@ -2,11 +2,18 @@ package starter.pages;
 
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 @DefaultUrl("https://lamiapp.netlify.app/add-culture")
 public class AddCulturesPage extends PageObject {
+
+
+    public void clickAddButtonCultureAdmin(){
+        WebElement addButtonCultureAdmin = getDriver().switchTo().activeElement().findElement(By.xpath("//body/div[@id='root']/div[1]/div[1]/div[1]/a[1]/div[1]"));
+        addButtonCultureAdmin.click();
+    }
 
     @FindBy(id = "input-title")
     WebElement fieldTitle;

@@ -28,4 +28,9 @@ public class LandingStep {
     public void clickLoginMenu(){
         landingPage.clickLogin();
     }
+
+    @Step
+    public void clickEventMenu(){
+        landingPage.clickLinkEvent();
+    }
 }

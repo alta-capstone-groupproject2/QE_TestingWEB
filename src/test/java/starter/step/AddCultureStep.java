@@ -8,8 +8,8 @@ public class AddCultureStep {
     AddCulturesPage addCulturesPage;
 
     @Step
-    public void openAddCulturePage(){
-        addCulturesPage.open();
+    public void addCultureAdmin(){
+        addCulturesPage.clickAddButtonCultureAdmin();
     }
 
     @Step
