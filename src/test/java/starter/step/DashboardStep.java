@@ -21,4 +21,8 @@ public class DashboardStep{
         assertTrue(dashboardPage.profilHeaderIsDisplayed());
     }
 
+    @Step
+    public void clickMyEvent(){
+        dashboardPage.clickMyEvent();
+    }
 }

@@ -4,6 +4,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import net.thucydides.core.annotations.Steps;
 import starter.step.AdminStep;
+import starter.step.DashboardStep;
+import starter.step.EventsStep;
 import starter.step.LandingStep;
 
 public class LandingStepdefs {
@@ -12,6 +14,8 @@ public class LandingStepdefs {
     LandingStep landingStep;
     @Steps
     AdminStep adminStep;
+    @Steps
+    DashboardStep dashboardStep;
 
     @Given("User open lamiApp")
     public void userOpenLamiApp() {
@@ -29,6 +33,13 @@ public class LandingStepdefs {
                 break;
             case "Cultures" :
                 landingStep.clickCultureMenu();
+                break;
+            case "My Event" :
+                dashboardStep.clickMyEvent();
+                break;
+            case "events" :
+                landingStep.clickEventMenu();
+                break;
             default:
         }
     }

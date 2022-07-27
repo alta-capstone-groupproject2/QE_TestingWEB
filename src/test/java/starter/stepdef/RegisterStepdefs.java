@@ -25,6 +25,18 @@ public class RegisterStepdefs {
     CulturesStep culturesStep;
     @Steps
     CultureAdminStep cultureAdminStep;
+    @Steps
+    MyEventStep myEventStep;
+    @Steps
+    AddEventUserStep addEventUserStep;
+    @Steps
+    ListEventSubmissionStep listEventSubmissionStep;
+    @Steps
+    DetailEventAdminStep detailEventAdminStep;
+    @Steps
+    EventsStep eventsStep;
+    @Steps
+    EventDetailStep eventDetailStep;
 
     @Given("User already on the {string} page")
     public void userAlreadyOnThePage(String page) {
@@ -67,13 +79,22 @@ public class RegisterStepdefs {
             case "culture detail" :
                 culturesStep.verifyCulturesDetailPage();
                 break;
+            case "my event" :
+                myEventStep.verifyMyEventPage();
+                break;
+            case "apply event user" :
+                addEventUserStep.verifyApplyEvent();
+                break;
+            case "events" :
+                eventsStep.verifyEventsPage();
+                break;
             default:
         }
     }
 
     @When("User input field {string} with {string}")
     public void userInputFieldUsername(String field, String data) {
-        switch (field){
+        switch (field.toLowerCase()){
             case "username" :
                 registerStep.inputFieldUsername(data);
                 break;
@@ -110,6 +131,27 @@ public class RegisterStepdefs {
             case "report culture" :
                 culturesStep.inputFieldReportCulture(data);
                 break;
+            case "name" :
+                addEventUserStep.inputFieldName(data);
+                break;
+            case "host" :
+                addEventUserStep.inputFieldHost(data);
+                break;
+            case "date start" :
+                addEventUserStep.inputFieldStartDate(data);
+                break;
+            case "date end" :
+                addEventUserStep.inputFieldEndDate(data);
+                break;
+            case "price" :
+                addEventUserStep.inputFieldPrice(data);
+                break;
+            case "address events" :
+                addEventUserStep.inputFieldAddresEvent(data);
+                break;
+            case "city event" :
+                addCultureStep.inputFieldCity(data);
+                break;
             default:
         }
 
@@ -123,10 +165,15 @@ public class RegisterStepdefs {
             culturesStep.clickSubmitReport();
         } else if(page.equalsIgnoreCase("detail culture")){
             cultureAdminStep.clickButtonDetail();
+        } else if(page.equalsIgnoreCase("detail event submission")){
+            listEventSubmissionStep.clickDetail();
+        } else if (page.equalsIgnoreCase("accept event")) {
+            detailEventAdminStep.clickAcceptButton();
+        } else if (page.equalsIgnoreCase("join")) {
+            eventDetailStep.clickButtonJoin();
         } else {
             registerStep.clickButtonSignup();
         }
-
     }
 
     @Then("Popup message {string} Appear")
